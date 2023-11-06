@@ -1,11 +1,14 @@
 {
-  "name": "express-advance-project",
-  "version": "1.0.0",
-  "description": "A node-express advance project ",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "syed-yasir",
-  "license": "ISC"
+	"name": "express-advance-project",
+	"version": "1.0.0",
+	"description": "A node-express advance project ",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon src/index.js"
+	},
+	"author": "syed-yasir",
+	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "^3.0.1"
+	}
 }
