@@ -1,12 +1,20 @@
-const mongoose = require("mongoose");
-const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
-
-const app = express();
+const app = require("./app");
 const connectDB = require("./db/index");
 
-connectDB();
+connectDB()
+  .then(() => {
+    app.listen(process.env.PORT || 3000, () => {
+      console.log(`App is listening on port ${process.env.PORT}...`);
+    });
+  })
+  .catch((error) => {
+    console.log(`Database connection failed !!!`, error);
+  });
+// app.listen(process.env.PORT || 3000, () => {
+//   console.log(`App is listening on port ${process.env.PORT}...`);
+// });
 /*
 (async () => {
   try {
